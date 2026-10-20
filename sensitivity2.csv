@@ -1,0 +1,25 @@
+site,driver,percent_change_npp_increase,percent_change_npp_decrease
+EBF,Shortwave radiation,62.632,-62.632
+EBF,Leaf area index,-42.632,42.632
+EBF,Absorbed fraction of PAR,62.632,-62.632
+EBF,Average Temperature,-28.998,25.244
+EBF,Minimum Temperature,0.000,0.000
+EBF,Vapour Pressure Deficit,-0.330,0.251
+EBF,Maximum light-use efficiency,62.632,-62.632
+EBF,Specific Leaf Area,35.527,-53.290
+OSL,Shortwave radiation,99.223,-99.223
+OSL,Leaf area index,-79.223,79.223
+OSL,Absorbed fraction of PAR,99.223,-99.223
+OSL,Average Temperature,-56.472,49.161
+OSL,Minimum Temperature,31.609,-37.983
+OSL,Vapour Pressure Deficit,-87.295,103.042
+OSL,Maximum light-use efficiency,99.223,-99.223
+OSL,Specific Leaf Area,66.019,-99.029
+CL,Shortwave radiation,26.569,-26.569
+CL,Leaf area index,-6.569,6.569
+CL,Absorbed fraction of PAR,26.569,-26.569
+CL,Average Temperature,-3.907,3.401
+CL,Minimum Temperature,8.413,-9.762
+CL,Vapour Pressure Deficit,-6.373,5.507
+CL,Maximum light-use efficiency,26.569,-26.569
+CL,Specific Leaf Area,5.475,-8.212

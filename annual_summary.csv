@@ -1,0 +1,4 @@
+biome_code,biome_name,annual_gpp,annual_maintenance_resp,annual_growth_resp,annual_npp,npp_over_gpp
+EBF,"Evergreen broadleaf forest",2.297896,1.430965,0.133153,0.733779,0.3193
+OSL,"Open shrubland",0.284576,0.217840,0.009375,0.057361,0.2016
+CL,"Cropland",0.545745,0.107939,0.027000,0.410806,0.7527

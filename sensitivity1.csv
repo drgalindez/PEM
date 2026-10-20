@@ -1,0 +1,10 @@
+site,driver,percent_change_plus_20,percent_change_minus_20
+EBF,Shortwave radiation,62.632,-62.632
+EBF,Leaf area index,-42.632,42.632
+EBF,Absorbed fraction of PAR,62.632,-62.632
+OSL,Shortwave radiation,99.223,-99.223
+OSL,Leaf area index,-79.223,79.223
+OSL,Absorbed fraction of PAR,99.223,-99.223
+CL,Shortwave radiation,26.569,-26.569
+CL,Leaf area index,-6.569,6.569
+CL,Absorbed fraction of PAR,26.569,-26.569
