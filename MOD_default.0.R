@@ -231,3 +231,93 @@ plot_ly(data = monthly_temp, x = ~month, y = ~vpd_Pa, type = 'bar', name = 'VPD'
          xaxis = list(title = "Month"),
          yaxis = list(title = "Mean VPD (Pa)"))
 
+# Descriptive site labels
+sens$site <- factor(
+  sens$site,
+  levels = c("EBF", "OSL", "CL"),
+  labels = c(
+    "Evergreen broadleaf forest",
+    "Open shrubland",
+    "Cropland"
+  )
+)
+
+# Consistent labels and ordering
+driver_order <- c(
+  "Shortwave radiation",
+  "Absorbed fraction of PAR",
+  "Maximum light-use efficiency",
+  "Leaf area index",
+  "Specific Leaf Area",
+  "Average Temperature",
+  "Minimum Temperature",
+  "Vapour Pressure Deficit"
+)
+
+sens$driver <- factor(
+  sens$driver,
+  levels = rev(driver_order)
+)
+
+# Convert the two response columns into a single response column
+long <- pivot_longer(
+  sens,
+  cols = c(
+    percent_change_npp_increase,
+    percent_change_npp_decrease
+  ),
+  names_to = "perturbation",
+  values_to = "npp_change"
+)
+
+long$perturbation <- factor(
+  long$perturbation,
+  levels = c(
+    "percent_change_npp_increase",
+    "percent_change_npp_decrease"
+  ),
+  labels = c("Input increased", "Input decreased")
+)
+
+p <- ggplot(
+  long,
+  aes(x = driver, y = npp_change, fill = perturbation)
+) +
+  geom_col(
+    position = position_dodge(width = 0.8),
+    width = 0.7
+  ) +
+  geom_hline(yintercept = 0, colour = "grey30") +
+  coord_flip() +
+  facet_wrap(~site, ncol = 1) +
+  scale_fill_manual(
+    values = c(
+      "Input increased" = "#D95F02",
+      "Input decreased" = "#1B9E77"
+    )
+  ) +
+  labs(
+    title = "Sensitivity of annual NPP",
+    subtitle = paste(
+      "One input changed at a time:",
+      "temperatures ±2 °C; all other quantities ±20%"
+    ),
+    x = NULL,
+    y = "Change in annual NPP relative to baseline (%)",
+    fill = NULL,
+    caption = paste(
+      "All panels use the same response scale.",
+      "Zero minimum-temperature responses in the forest",
+      "are shown as zero-length bars."
+    )
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    legend.position = "bottom",
+    panel.grid.major.y = element_blank(),
+    strip.text = element_text(face = "bold"),
+    plot.caption = element_text(hjust = 0)
+  )
+
+print(p)
+
